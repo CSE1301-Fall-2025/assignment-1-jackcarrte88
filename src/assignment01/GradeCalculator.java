@@ -18,10 +18,10 @@ public class GradeCalculator {
 		System.out.println("what was your average Exam grade?" );
 		double averageExamGrade = in.nextDouble();
 
-		double studiosWeighted = (studiosAttended/8)*15.0;
-		double quizWeighted = (averageQuizGrade/100)*25.0;
-		double examWeighted = (averageExamGrade/100)*60.0;
-		double finalGrade = (studiosWeighted + quizWeighted + examWeighted);
+		double studiosWeighted = Math.round(((studiosAttended/8)*15.0)*100)/100;
+		double quizWeighted = Math.round(((averageQuizGrade/100)*25.0)*100)/100;
+		double examWeighted = Math.round(((averageExamGrade/100)*60.0)*100)/100;
+		double finalGrade = Math.round((studiosWeighted + quizWeighted + examWeighted)*100) / 100;
 
 		System.out.println("The CS131 grade for:" + name);
 		System.out.println("number of studios attended: " + studiosAttended);
